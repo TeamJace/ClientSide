@@ -8,6 +8,8 @@ var app = app || {};
         this.title = obj.title;
         this.author = obj.author;
         this.image_url = obj.image_url;
+        this.description = obj.description;
+        this.isbn = obj.isbn;
     };
 
     Book.all = [];
@@ -22,6 +24,16 @@ var app = app || {};
         Book.all = rawData.map(bookObject => new Book(bookObject));
    
     };
+
+    Book.fetchOne = (ctx, cb) => {
+        $.get('https://lab11books.herokuapp.com/api/v1/books/:id')
+        .then(data => {
+            // data is an array, need 1st object in it, then will transform it into a card instance to use .toHtml method
+            ctx.book = new Book(data[0]);
+            cb();
+            })
+        .fail(console.log);
+    }; // change the requested server to the live-server when in a dev environment.
 
     Book.fetchAll = (callback) => {
         $.get('https://lab11books.herokuapp.com/api/v1/books').then(results => {

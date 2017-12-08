@@ -1,0 +1,1 @@
+page('books/:id', app.Book.fetchOne, app.cardView.initDetailPage)
