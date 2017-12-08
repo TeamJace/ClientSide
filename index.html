@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books!</title>
+    <script id="book-template" type="text/x-handlebars-template">
+        <div class="clearfix" data-author="{{author}}">
+            <div class='bookImage'>
+                <img src="{{image_url}}" alt={{title}}>
+            </div>
+          <section>
+            <h1>{{title}}</h1>
+            <p>{{author}}</p>
+          </section>
+        </div>
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">books</a></li>
+            <li><a href="/about" id="about">about</a></li>
+        </ul>
+    </nav>
+    <section id="books">
+        <!-- will show all books -->
+    </section>
+    <section id="about">
+        <ul>
+            <li>This app is for showing cool books.</li>
+        </ul>
+    </section>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="scripts/models.js"></script>
+    <script src="scripts/views.js"></script>
+</body>
+</html>
