@@ -1,5 +1,3 @@
-# ClientSide
-
 # Client side books application
 
 **Author**: Grace Provost and Jack Lomax
