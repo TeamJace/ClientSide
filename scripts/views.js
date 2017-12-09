@@ -6,6 +6,7 @@ var app = app || {};
     let bookView = {};
 
     bookView.initIndexPage = () => {
+        console.log(app.Book.all);
         $('main section').hide();
         $('#books').empty().show();
         app.Book.all.map(book => $('#books').append(book.toHtml()));
@@ -15,7 +16,7 @@ var app = app || {};
         console.log(ctx);
         $('main section').hide();
         $('#books').empty().show();
-        $('#books').append(ctx.Book.toHtml());
+        $('#books').append(ctx.book.toHtml());
     };
 
     module.bookView = bookView;

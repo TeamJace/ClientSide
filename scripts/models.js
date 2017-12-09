@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
 var app = app || {};
 // const API_URL = "https://lab11books.herokuapp.com";
-const API_URL = "http://localhost:3000";
+const API_URL = "http://localhost:3001";
 
 (function(module) {
     function Book (obj) {
@@ -27,7 +27,7 @@ const API_URL = "http://localhost:3000";
 
     Book.fetchOne = (ctx, cb) => {
         console.log(ctx);
-        $.get(`${API_URL}/api/v1/books/:id`)
+        $.get(`${API_URL}/api/v1/books/${ctx.params.id}`)
             .then(data => {
                 ctx.book = new Book(data[0]);
                 cb();
