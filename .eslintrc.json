@@ -5,7 +5,9 @@
       "ecmaFeatures": {"impliedStrict": true}
     },
     "globals": {
-      "page": true
+      "page": true,
+      "app" : true,
+      "Handlebars": true
     },
     "env": {
       "jquery": true,

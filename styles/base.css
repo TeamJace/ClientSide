@@ -1,0 +1,34 @@
+* {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    box-sizing: border-box;
+    color:#21320C;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+img {
+    width:70%;
+    object-fit: contain;
+    border: 3px solid #F5F3D6;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover{
+    color: #97C55F;
+}
+
+body {
+    background-color: #F5F3D6;
+}
+
+main {
+    margin: 10px;
+}

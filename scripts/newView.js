@@ -7,6 +7,7 @@ var app = app || {};
 
     newView.initNewPage = () => {
         $('main section').hide();
+        $('.tab-book').hide();
         $(`section[data-tab="new"]`).show();
 
         $('#new-form').on('submit', newView.submit);

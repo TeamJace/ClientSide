@@ -45,9 +45,9 @@ const API_URL = "https://lab11books.herokuapp.com";
 
     Book.prototype.insertRecord = function(callback) {
         $.post(`${API_URL}/api/v1/new`, {
-            author: this.author, 
-            image_url: this.image_url, 
-            description: this.description, 
+            author: this.author,
+            image_url: this.image_url,
+            description: this.description,
             isbn: this.isbn,
             title: this.title})
             .then(console.log)

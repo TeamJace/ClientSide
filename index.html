@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Books!</title>
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,500,700" rel="stylesheet">
+    <link href="styles/normalize.css" rel="stylesheet" type="text/css">
+    <link href="styles/icons.css" rel="stylesheet" type="text/css">
+    <link href="styles/base.css" rel="stylesheet" type="text/css">
+    <link href="styles/layout.css" rel="stylesheet" type="text/css">
+    <link href="styles/modules.css" rel="stylesheet" type="text/css">
     <script id="book-template" type="text/x-handlebars-template">
-        <div class="clearfix" data-author="{{author}}">
+        <div class="book-contain" data-author="{{author}}">
             <div class='bookImage'>
                 <img src="{{image_url}}" alt={{title}}>
             </div>
-          <section>
+          <section class="info">
             <a href="/books/{{id}}"><h1>{{title}}</h1></a>
             <p>{{author}}</p>
           </section>
@@ -18,24 +24,30 @@
     </script>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/">books</a></li>
-            <li><a href="/about" id="about">about</a></li>
-            <li><a href="/new" id="new">new</a></li> 
-        </ul>
-    </nav>
+    <header class="heading">
+        <h1 class="title">books app</h1>
+        <nav class="nav">
+            <div class="icon-menu"></div>
+            <ul>
+                <li><a href="/">books</a></li>
+                <li><a href="/about" id="about">about</a></li>
+                <li><a href="/new" id="new">new</a></li> 
+            </ul>
+        </nav> 
+    </header>
+    <h1 class="tab-title tab-book">my books</h1>
     <main>
         <section id="books">
             <!-- will show all books -->
         </section>
         <section data-tab="about">
+            <h1 class="tab-title">about</h1>
             <ul>
                 <li>This app is for showing cool books.</li>
             </ul>
         </section>
         <section data-tab="new">
-            <h1>New Book</h1>
+            <h1 class="tab-title">new book</h1>
             <form action="#" id="new-form">
               <label>
                 <input type="text" id="book-title" placeholder="Book Title" required>

@@ -7,6 +7,7 @@ var app = app || {};
 
     aboutView.initAboutPage = () => {
         $('main section').hide();
+        $('.tab-book').hide();
         $(`section[data-tab="about"]`).show();
     };
 
