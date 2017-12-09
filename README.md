@@ -1,7 +1,7 @@
 # Client side books application
 
 **Author**: Grace Provost and Jack Lomax
-**Version**: 1.0.0
+**Version**: 1.0.1
 
 ## Overview
 This application grabs data from an API hosted by Heroku and changes it into html through handlebars.js template.
