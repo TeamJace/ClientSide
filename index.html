@@ -29,10 +29,29 @@
         <section id="books">
             <!-- will show all books -->
         </section>
-        <section id="about">
+        <section data-tab="about">
             <ul>
                 <li>This app is for showing cool books.</li>
             </ul>
+        </section>
+        <section data-tab="new">
+            <h1>New Book</h1>
+            <form action="#" id="new-form">
+              <label>
+                <input type="text" id="book-title" placeholder="Book Title" required>
+              </label>
+              <textarea id="book-summary" placeholder="Book Summary" rows="8" cols="40" required></textarea>
+              <label>
+                <input type="text" id="book-author" placeholder="Author Name" required>
+              </label>
+              <label>
+                <input type="text" id="image-url" placeholder="Book Image URL" required>
+              </label>
+              <label>
+                <input type="text" id="isbn" placeholder="isbn" required>
+              </label>
+              <button type="submit">Submit!</button>
+            </form>
         </section>
     </main>
     <script>var app = app || {}</script>
@@ -40,7 +59,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="scripts/models.js"></script>
-    <script src="scripts/views.js"></script>
+    <script src="scripts/bookView.js"></script>
+    <script src="scripts/newView.js"></script>
+    <script src="scripts/aboutView.js"></script>
     <script src="scripts/routes.js"></script>
     <script>app.Book.fetchAll(app.bookView.initIndexPage)</script>
 </body>

@@ -43,6 +43,17 @@ const API_URL = "http://localhost:3001";
             });
     };
 
+    Book.prototype.insertRecord = function(callback) {
+        $.post(`${API_URL}/api/v1/new`, {
+            author: this.author, 
+            image_url: this.image_url, 
+            description: this.description, 
+            isbn: this.isbn,
+            title: this.title})
+            .then(console.log)
+            .then(callback);
+    };
+
     module.Book = Book;
 
 })(app);
