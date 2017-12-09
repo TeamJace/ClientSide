@@ -11,7 +11,7 @@
                 <img src="{{image_url}}" alt={{title}}>
             </div>
           <section>
-            <h1>{{title}}</h1>
+            <a href="/books/{{id}}"><h1>{{title}}</h1></a>
             <p>{{author}}</p>
           </section>
         </div>
@@ -35,11 +35,13 @@
             </ul>
         </section>
     </main>
+    <script>var app = app || {}</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="scripts/models.js"></script>
     <script src="scripts/views.js"></script>
     <script src="scripts/routes.js"></script>
+    <script>app.Book.fetchAll(app.bookView.initIndexPage)</script>
 </body>
 </html>

@@ -5,12 +5,6 @@ var app = app || {};
 
     let bookView = {};
 
-    bookView.create = () => {
-        app.Book.all.forEach(a => {
-            $('#books').append(a.toHtml());
-        });
-    };
-
     bookView.initIndexPage = () => {
         $('main section').hide();
         $('#books').empty().show();
@@ -18,6 +12,7 @@ var app = app || {};
     };
 
     bookView.initDetailPage = (ctx) => {
+        console.log(ctx);
         $('main section').hide();
         $('#books').empty().show();
         $('#books').append(ctx.Book.toHtml());
@@ -27,6 +22,5 @@ var app = app || {};
 
 })(app);
 
-app.Book.fetchAll(app.bookView.create);
 
 

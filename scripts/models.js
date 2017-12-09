@@ -26,6 +26,7 @@ const API_URL = "http://localhost:3000";
     };
 
     Book.fetchOne = (ctx, cb) => {
+        console.log(ctx);
         $.get(`${API_URL}/api/v1/books/:id`)
             .then(data => {
                 ctx.book = new Book(data[0]);
