@@ -8,6 +8,7 @@ var app = app || {};
     bookView.initIndexPage = () => {
         console.log(app.Book.all);
         $('main section').hide();
+        $('.tab-book').show();
         $('#books').empty().show();
         app.Book.all.map(book => $('#books').append(book.toHtml()));
     };
