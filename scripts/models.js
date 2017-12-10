@@ -1,8 +1,8 @@
 'use strict';
 
 var app = app || {};
-const API_URL = "https://lab11books.herokuapp.com";
-// const API_URL = "http://localhost:3001";
+// const API_URL = "https://lab11books.herokuapp.com";
+const API_URL = "http://localhost:3001";
 
 (function(module) {
     function Book (obj) {
@@ -16,8 +16,8 @@ const API_URL = "https://lab11books.herokuapp.com";
 
     Book.all = [];
 
-    Book.prototype.toHtml = function() {
-        const template = Handlebars.compile($('#book-template').text());
+    Book.prototype.toHtml = function(selector) {
+        const template = Handlebars.compile($(`${selector}`).text());
         return template(this);
     };
 
