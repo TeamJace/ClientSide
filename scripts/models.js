@@ -16,8 +16,8 @@ const API_URL = "https://lab11books.herokuapp.com";
 
     Book.all = [];
 
-    Book.prototype.toHtml = function() {
-        const template = Handlebars.compile($('#book-template').text());
+    Book.prototype.toHtml = function(selector) {
+        const template = Handlebars.compile($(`${selector}`).text());
         return template(this);
     };
 

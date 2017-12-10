@@ -81,6 +81,10 @@ nav:hover ul {
     border-radius: 10% 0 10%;
 }
 
+.info p {
+    margin-top: 10px;
+}
+
 /* form */
 
 /* Styling taken and modified from: https://www.sanwebe.com/2013/10/css-html-form-styles */

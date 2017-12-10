@@ -11,6 +11,7 @@ img {
     width:70%;
     object-fit: contain;
     border: 3px solid #F5F3D6;
+    max-width: 300px;
 }
 
 li {

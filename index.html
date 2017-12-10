@@ -22,6 +22,19 @@
           </section>
         </div>
     </script>
+    <script id="book-detail" type="text/x-handlebars-template">
+        <div class="book-contain" data-author="{{author}}">
+            <div class='bookImage'>
+                <img src="{{image_url}}" alt={{title}}>
+            </div>
+          <section class="info">
+            <a href="/books/{{id}}"><h1>{{title}}</h1></a>
+            <p>{{author}}</p>
+            <p>isbn: {{isbn}}</p>
+            <p>{{description}}</p>
+          </section>
+        </div>
+    </script>
 </head>
 <body>
     <header class="heading">
@@ -39,6 +52,9 @@
     <main>
         <section id="books">
             <!-- will show all books -->
+        </section>
+        <section id="detail">
+            <!-- will show one book -->
         </section>
         <section data-tab="about">
             <h1 class="tab-title">about</h1>

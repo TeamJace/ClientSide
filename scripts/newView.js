@@ -15,14 +15,15 @@ var app = app || {};
 
     newView.submit = event => {
         event.preventDefault();
-        let newBook = new app.Book({
+        const newBook = new app.Book({
             title: $('#book-title').val(),
             author: $('#book-author').val(),
             image_url: $('#image-url').val(),
             description: $('#book-summary').val(),
             isbn: $('#isbn').val()
         });
-        newBook.insertRecord();
+        console.log(newBook);
+        newBook.insertRecord(app.bookView.initIndexPage);
     };
 
 
