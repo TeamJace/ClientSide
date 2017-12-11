@@ -26,7 +26,6 @@ const API_URL = "https://lab11books.herokuapp.com";
     };
 
     Book.fetchOne = (ctx, cb) => {
-        console.log(ctx);
         $.get(`${API_URL}/api/v1/books/${ctx.params.id}`)
             .then(data => {
                 ctx.book = new Book(data[0]);

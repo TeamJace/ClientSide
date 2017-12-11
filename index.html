@@ -17,7 +17,7 @@
                 <img src="{{image_url}}" alt={{title}}>
             </div>
           <section class="info">
-            <a href="/books/{{id}}"><h1>{{title}}</h1></a>
+            <a href="/ClientSide/books/{{id}}"><h1>{{title}}</h1></a>
             <p>{{author}}</p>
           </section>
         </div>
@@ -28,11 +28,13 @@
                 <img src="{{image_url}}" alt={{title}}>
             </div>
           <section class="info">
-            <a href="/books/{{id}}"><h1>{{title}}</h1></a>
+            <a href="/ClientSide/books/{{id}}"><h1>{{title}}</h1></a>
             <p>{{author}}</p>
             <p>isbn: {{isbn}}</p>
             <p>{{description}}</p>
           </section>
+          <button data-method="update">Update</button> 
+          <button data-method="delete">Delete</button>
         </div>
     </script>
 </head>
@@ -42,9 +44,9 @@
         <nav class="nav">
             <div class="icon-menu"></div>
             <ul>
-                <li><a href="/">books</a></li>
-                <li><a href="/about" id="about">about</a></li>
-                <li><a href="/new" id="new">new</a></li> 
+                <li><a href="/ClientSide/">books</a></li>
+                <li><a href="/ClientSide/about" id="about">about</a></li>
+                <li><a href="/ClientSide/new" id="new">new</a></li> 
             </ul>
         </nav> 
     </header>
@@ -80,6 +82,25 @@
               </label>
               <button type="submit">Submit!</button>
             </form>
+        </section>
+        <section data-tab="update">
+                <h1 class="tab-title">update book</h1>
+                <form action="#" id="update">
+                  <label>
+                    <input type="text" name="title" placeholder="Book Title" required>
+                  </label>
+                  <textarea name="description" placeholder="Book Summary" rows="8" cols="40" required></textarea>
+                  <label>
+                    <input type="text" name="author" placeholder="Author Name" required>
+                  </label>
+                  <label>
+                    <input type="text" name="image_url" placeholder="Book Image URL" required>
+                  </label>
+                  <label>
+                    <input type="text" name="isbn" placeholder="isbn" required>
+                  </label>
+                  <button type="update-submit">Submit!</button>
+                </form>
         </section>
     </main>
     <script>var app = app || {}</script>
