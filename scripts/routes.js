@@ -10,10 +10,5 @@ page('/about', app.aboutView.initAboutPage);
 
 page('/books/:id/update', app.Book.fetchOne,app.bookView.initUpdatePage);
 
-// $('#submit').on('submit', (e) => {
-//     e.preventDefault();
-//     page.redirect('/');
-// });
-
-// page.base('/ClientSide');
+// page.base('/');
 page.start();
