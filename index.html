@@ -17,7 +17,7 @@
                 <img src="{{image_url}}" alt={{title}}>
             </div>
           <section class="info">
-            <a href="/ClientSide/books/{{id}}"><h1>{{title}}</h1></a>
+            <a href="/books/{{id}}"><h1>{{title}}</h1></a>
             <p>{{author}}</p>
           </section>
         </div>
@@ -28,7 +28,7 @@
                 <img src="{{image_url}}" alt={{title}}>
             </div>
           <section class="info">
-            <a href="/ClientSide/books/{{id}}"><h1>{{title}}</h1></a>
+            <a href="/books/{{id}}"><h1>{{title}}</h1></a>
             <p>{{author}}</p>
             <p>isbn: {{isbn}}</p>
             <p>{{description}}</p>
@@ -44,9 +44,10 @@
         <nav class="nav">
             <div class="icon-menu"></div>
             <ul>
-                <li><a href="/ClientSide/">books</a></li>
-                <li><a href="/ClientSide/about" id="about">about</a></li>
-                <li><a href="/ClientSide/new" id="new">new</a></li> 
+                <li><a href="/">books</a></li>
+                <li><a href="/about" id="about">about</a></li>
+                <li><a href="/new" id="new">new</a></li> 
+                <li><a href="/books/search" id="search">search</a></li>
             </ul>
         </nav> 
     </header>
@@ -64,6 +65,18 @@
                 <li>This app is for showing cool books.</li>
             </ul>
         </section>
+        <section data-tab="search">
+            <h1 class="tab-title">search</h1>
+            <form action="#" id="search-form">
+                <input type="input" name="book_search" placeholder="Search By Title">
+                <button>Search!</button>
+            </form>
+        </section>
+        <section data-tab="results">
+                <h1 class="tab-title">results</h1>
+                <div id="book_info">
+                </div>
+            </section>
         <section data-tab="new">
             <h1 class="tab-title">new book</h1>
             <form action="#" id="new-form">

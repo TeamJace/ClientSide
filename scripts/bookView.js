@@ -55,6 +55,31 @@ var app = app || {};
         });
     };
 
+    bookView.initSearchFormPage = () => {
+        $('main section').hide();
+        $('.tab-book').hide();
+        $(`section[data-tab="search"]`).show();
+        console.log('initialized');
+
+        $('#search-form').on('submit', (event) => {
+            event.preventDefault();
+            const title = {
+                title: $('#search-form input[name="book_search"]').val()
+            };
+           
+            app.Book.find(title, bookView.initSearchResultsPage);
+        });
+    };
+
+    bookView.initSearchResultsPage = () => {
+        $('main section').hide();
+        $('.tab-book').hide();
+        $('section[data-tab="results"]').show();
+
+        app.Book.all.map(book => $('#book_info').append(book.toHtml('#book-template')));
+
+    };
+
     module.bookView = bookView;
 
 })(app);
