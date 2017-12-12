@@ -26,7 +26,6 @@ const API_URL = "https://lab11books.herokuapp.com";
     };
 
     Book.fetchOne = (ctx, cb) => {
-        console.log(ctx);
         $.get(`${API_URL}/api/v1/books/${ctx.params.id}`)
             .then(data => {
                 ctx.book = new Book(data[0]);
@@ -50,8 +49,29 @@ const API_URL = "https://lab11books.herokuapp.com";
             description: this.description,
             isbn: this.isbn,
             title: this.title})
-            .then(console.log)
+            .done(page(`/`))
             .then(callback);
+    };
+
+    Book.update = (data, id) => {
+        $.ajax({
+            url: `${API_URL}/api/v1/books/${id}`,
+            method: 'PUT',
+            data: data
+        })
+            .done(() => {
+                page(`/books/${id}`);
+            });
+    };
+
+    Book.delete = (id) => {
+        $.ajax({
+            url: `${API_URL}/api/v1/books/${id}`,
+            method: 'DELETE'
+        })
+            .done(() => {
+                page(`/`);
+            });
     };
 
     module.Book = Book;

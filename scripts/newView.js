@@ -26,8 +26,5 @@ var app = app || {};
         newBook.insertRecord(app.bookView.initIndexPage);
     };
 
-
-    
-
     module.newView = newView;
 })(app);

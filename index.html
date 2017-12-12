@@ -33,6 +33,8 @@
             <p>isbn: {{isbn}}</p>
             <p>{{description}}</p>
           </section>
+          <button data-method="update">Update</button> 
+          <button data-method="delete">Delete</button>
         </div>
     </script>
 </head>
@@ -80,6 +82,25 @@
               </label>
               <button type="submit">Submit!</button>
             </form>
+        </section>
+        <section data-tab="update">
+                <h1 class="tab-title">update book</h1>
+                <form action="#" id="update">
+                  <label>
+                    <input type="text" name="title" placeholder="Book Title" required>
+                  </label>
+                  <textarea name="description" placeholder="Book Summary" rows="8" cols="40" required></textarea>
+                  <label>
+                    <input type="text" name="author" placeholder="Author Name" required>
+                  </label>
+                  <label>
+                    <input type="text" name="image_url" placeholder="Book Image URL" required>
+                  </label>
+                  <label>
+                    <input type="text" name="isbn" placeholder="isbn" required>
+                  </label>
+                  <button id="updateSubmit">Submit!</button>
+                </form>
         </section>
     </main>
     <script>var app = app || {}</script>
