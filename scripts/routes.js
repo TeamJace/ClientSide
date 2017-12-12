@@ -8,12 +8,12 @@ page('/new', app.newView.initNewPage);
 
 page('/about', app.aboutView.initAboutPage);
 
-page('/cards/:id/update', app.Book.fetchOne,app.bookView.initUpdatePage);
+page('/books/:id/update', app.Book.fetchOne,app.bookView.initUpdatePage);
 
 // $('#submit').on('submit', (e) => {
 //     e.preventDefault();
 //     page.redirect('/');
 // });
 
-page.base('/ClientSide');
+// page.base('/ClientSide');
 page.start();
