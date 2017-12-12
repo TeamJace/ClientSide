@@ -10,5 +10,6 @@ page('/about', app.aboutView.initAboutPage);
 
 page('/books/:id/update', app.Book.fetchOne,app.bookView.initUpdatePage);
 
-// page.base('/');
+page.base('/ClientSide');
+
 page.start();
