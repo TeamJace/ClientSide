@@ -50,7 +50,7 @@ var app = app || {};
                 title: $('#update input[name="title"]').val(),
                 image_url: $('#update input[name="image_url"]').val()
             };
-            
+
             app.Book.update( updatedData, book.id);
         });
     };
@@ -63,11 +63,8 @@ var app = app || {};
 
         $('#search-form').on('submit', (event) => {
             event.preventDefault();
-            const title = {
-                title: $('#search-form input[name="book_search"]').val()
-            };
-           
-            app.Book.find(title, bookView.initSearchResultsPage);
+            const title = $('#search-form input[name="book_search"]').val();
+            app.Book.find(title, app.bookView.initSearchResultsPage);
         });
     };
 
