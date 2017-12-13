@@ -50,9 +50,31 @@ var app = app || {};
                 title: $('#update input[name="title"]').val(),
                 image_url: $('#update input[name="image_url"]').val()
             };
-            
+
             app.Book.update( updatedData, book.id);
         });
+    };
+
+    bookView.initSearchFormPage = () => {
+        $('main section').hide();
+        $('.tab-book').hide();
+        $(`section[data-tab="search"]`).show();
+        console.log('initialized');
+
+        $('#search-form').on('submit', (event) => {
+            event.preventDefault();
+            const title = $('#search-form input[name="book_search"]').val();
+            app.Book.find(title, app.bookView.initSearchResultsPage);
+        });
+    };
+
+    bookView.initSearchResultsPage = () => {
+        $('main section').hide();
+        $('.tab-book').hide();
+        $('section[data-tab="results"]').show();
+
+        app.Book.all.map(book => $('#book_info').append(book.toHtml('#book-template')));
+
     };
 
     module.bookView = bookView;

@@ -74,6 +74,15 @@ const API_URL = "https://lab11books.herokuapp.com";
             });
     };
 
+    Book.find = (title, callback) => {
+        $.get(`${API_URL}/api/v1/books/search?search=${title}`)
+            .then(results => {
+                Book.loadAll(results);
+                callback();
+            });
+
+    };
+
     module.Book = Book;
 
 })(app);
